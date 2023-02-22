@@ -1,0 +1,20 @@
+{
+  "name": "ls-hugo-cli",
+  "version": "1.0.0",
+  "description": "CLI tool to export logseq graph to hugo pages",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vanduc2514",
+  "license": "MIT",
+  "dependencies": {
+    "@logseq/libs": "^0.0.14",
+    "@logseq/nbb-logseq": "1.1.158",
+    "mldoc": "1.5.1"
+  },
+  "devDependencies": {
+    "typescipt": "^1.0.0"
+  }
+}
