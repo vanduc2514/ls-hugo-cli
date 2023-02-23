@@ -1,4 +1,4 @@
-import logseqQueryFactory from './query'
+import logseqQueryFactory from './query.js'
 
 let logseqBasePath
 
@@ -18,8 +18,8 @@ function parsePage(page) {
     let hugoFrontMatter = toHugoFrontMatter(logseqPage.metadata)
 }
 
-// NOT NULL SAFETY
-function parseLogSeqPage(page) {
+export function parseLogSeqPage(page) {
+    console.log(page)
     let metadata = {
         // How to query this data ??
         title: null,
@@ -27,8 +27,8 @@ function parseLogSeqPage(page) {
     }
 
     let properties = page["properties"]
-    metadata.tag = properties["tag"]
-    metadata.category = properties["category"] ?? properties["categories"]
+    metadata.tag = properties?.["tags"] || []
+    metadata.category = (properties?.["category"] ?? properties?.["categories"]) || []
     metadata.createDate = hugoDate(page["created-at"])
     metadata.updateDate = hugoDate(page["updated-at"])
 
